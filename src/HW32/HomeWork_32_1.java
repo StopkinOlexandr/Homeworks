@@ -7,7 +7,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HomeWork_32_1 {
-
+  enum Season {
+    WINTER,
+    SPRING,
+    SUMMER,
+    AUTUMN,
+  }
   enum Month {
     JANUARY,
     FEBRUARY,
