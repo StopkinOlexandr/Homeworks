@@ -35,6 +35,7 @@ public class HomeWork_32_2 {
     inputFileReader.close();
     return months;
   }
+
   public static Map<Month, Integer> buildMonthsMap() {
     Map<Month, Integer> months = new HashMap<>();
 
@@ -60,8 +61,7 @@ public class HomeWork_32_2 {
     System.out.print("Enter the month: ");
     String month = inputReader.readLine();
     Month monthToLook = Month.valueOf(month.toUpperCase());
-
-    Map<Month, Integer> monthDays = buildMonthsMap();
+    Map<Month, Integer> monthDays = readMonthsFromFile(new File("res/months.csv"));
 
     if (monthDays.containsKey(monthToLook)) {
       System.out.printf("The month '%s' contains %d days%n", month, monthDays.get(monthToLook));
