@@ -72,11 +72,17 @@ public class HomeWork_32_1 {
     String month = inputReader.readLine();
     Month monthToLook = Month.valueOf(month.toUpperCase());
     Map<Month, Integer> monthDays = buildMonthsMap();
+    Map<Month, Season> seasons = buildMonthsSeasons();
 
     if (monthDays.containsKey(monthToLook)) {
-      System.out.printf("The month '%s' contains %d days%n", month, monthDays.get(monthToLook));
+      System.out.printf("The month '%s' is '%s' and contains %d days%n", month,
+          seasons.get(monthToLook), monthDays.get(monthToLook));
       System.out.printf("The month '%s' has ordinal number %d%n", month, monthToLook.ordinal() + 1);
+      Season seasonToLook = Season.valueOf(seasons.get(monthToLook).toString());
+      System.out.printf("The season '%s' has ordinal number %d%n",
+          seasons.get(monthToLook), seasonToLook.ordinal() + 1);
       int nextMonthIndex = (monthToLook.ordinal() + 1);
+
       Month nextMonth = Month.values()[nextMonthIndex % Month.values().length];
 
       System.out.printf("The next month is '%s'%n", nextMonth);
