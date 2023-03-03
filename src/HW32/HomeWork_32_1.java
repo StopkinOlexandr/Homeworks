@@ -13,6 +13,7 @@ public class HomeWork_32_1 {
     SUMMER,
     AUTUMN,
   }
+
   enum Month {
     JANUARY,
     FEBRUARY,
@@ -44,6 +45,24 @@ public class HomeWork_32_1 {
     months.put(Month.DECEMBER, 31);
 
     return months;
+  }
+
+  public static Map<Month, Season> buildMonthsSeasons() {
+    Map<Month, Season> seasons = new HashMap<>();
+    seasons.put(Month.JANUARY, Season.WINTER);
+    seasons.put(Month.FEBRUARY, Season.WINTER);
+    seasons.put(Month.MARCH, Season.SPRING);
+    seasons.put(Month.APRIL, Season.SPRING);
+    seasons.put(Month.MAY, Season.SPRING);
+    seasons.put(Month.JUNE, Season.SUMMER);
+    seasons.put(Month.JULY, Season.SUMMER);
+    seasons.put(Month.AUGUST, Season.SUMMER);
+    seasons.put(Month.SEPTEMBER, Season.AUTUMN);
+    seasons.put(Month.OCTOBER, Season.AUTUMN);
+    seasons.put(Month.NOVEMBER, Season.AUTUMN);
+    seasons.put(Month.DECEMBER, Season.WINTER);
+
+    return seasons;
   }
 
   public static void main(String[] args) throws IOException {
