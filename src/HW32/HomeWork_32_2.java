@@ -1,8 +1,6 @@
 package HW32;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,6 +20,21 @@ public class HomeWork_32_2 {
     DECEMBER,
   }
 
+  final public static String SEP = ","; // SEP = separator = разделитель
+
+  public static Map<Month, Integer> readMonthsFromFile(File inputFile) throws IOException {
+    Map<Month, Integer> months = new HashMap<>(); // словарь с месяцами и днями
+    BufferedReader inputFileReader = new BufferedReader(new FileReader(inputFile));
+
+    for (String row = inputFileReader.readLine(); row != null; row = inputFileReader.readLine()) {
+      int sepPoz = row.indexOf(SEP);
+      String month = row.substring(0, sepPoz);
+      int days = Integer.parseInt(row.substring(sepPoz + 1));
+      months.put(Month.valueOf(month.toUpperCase()), days);
+    }
+    inputFileReader.close();
+    return months;
+  }
   public static Map<Month, Integer> buildMonthsMap() {
     Map<Month, Integer> months = new HashMap<>();
 
